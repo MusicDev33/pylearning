@@ -2,36 +2,36 @@
   "skim": {
     "name": "Seongwoo Kim",
     "username": "skim",
-    "location": "112"
+    "loc_id": "112"
   },
   "sbennett": {
     "name": "Sophia Bennett",
     "username": "sbennett",
-    "location": "43"
+    "loc_id": "43"
   },
   "lfernandez": {
     "name": "Leo Fernandez",
     "username": "lfernandez",
-    "location": "118"
+    "loc_id": "118"
   },
   "gsantos": {
     "name": "Gabriel Santos",
     "username": "gsantos",
-    "location": "341"
+    "loc_id": "341"
   },
   "czhurong": {
     "name": "Zhurong Chen",
     "username": "czhurong",
-    "location": "203"
+    "loc_id": "203"
   },
   "mrodriguez": {
     "name": "Maya Rodriguez",
     "username": "mrodriguez",
-    "location": "35"
+    "loc_id": "35"
   },
   "spatel": {
     "name": "Srithi Patel",
     "username": "spatel",
-    "location": "117"
+    "loc_id": "117"
   }
 }
