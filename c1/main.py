@@ -49,4 +49,4 @@ LOCATION_MAP = {
 # is updated with a location that isn't included in the LOCATION_MAP dictionary
 for user in USERS:
   if user["location"] in LOCATION_MAP:
-    print(f"{user["name"]} - {LOCATION_MAP[user["location"]]}")
+    print(f'{user["name"]} - {LOCATION_MAP[user["location"]]}')
