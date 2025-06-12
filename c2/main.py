@@ -50,3 +50,15 @@ LOCATION_MAP = {
 }
 
 # Write your code below
+
+import sys
+
+if len(sys.argv) > 1:
+  for arg in range(1,len(sys.argv)):
+    for user in USERS:
+      if user['username'] == sys.argv[arg]:
+        name, username, location = user['name'], user['username'], LOCATION_MAP.get(user['location'], 'Unknown')
+        print(f"{name}\n\tUsername: {username}\n\tLocation: {location}\n")
+        break
+else:
+  print("Please provide a username.")
