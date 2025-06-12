@@ -1,6 +1,7 @@
 '''
 Challenge 2 - A Simple Terminal Interface
 '''
+# Imports go at the top, though I did say write your code below. But for future reference, they always go at the top of the file
 import sys
 
 USERS = [
@@ -52,6 +53,8 @@ LOCATION_MAP = {
 }
 
 # Write your code below
+# For now, you can ignore my approach here.
+# I instead copied your code and critiqued it in main2.py
 usernames = sys.argv[1:]
 
 def get_users(username: str):
