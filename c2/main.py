@@ -60,5 +60,7 @@ if len(sys.argv) > 1:
         name, username, location = user['name'], user['username'], LOCATION_MAP.get(user['location'], 'Unknown')
         print(f"{name}\n\tUsername: {username}\n\tLocation: {location}\n")
         break
+    else:
+      print(f'{sys.argv[arg]} not found.\n')
 else:
   print("Please provide a username.")
