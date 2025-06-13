@@ -63,16 +63,20 @@ if len(sys.argv) < 2:
 # By using the if statement above and short-circuiting early, we save ourselves from nesting our code even more
 usernames = sys.argv[1:] # This makes it clear what we're getting from sys.argv
 
-# 
 for username in usernames:
+  user_found = False
+
   for user in USERS:
     if user['username'] == username:
       name, username, location = user['name'], user['username'], LOCATION_MAP.get(user['location'], 'Unknown')
       print(f"{name}\n\tUsername: {username}\n\tLocation: {location}\n")
+      user_found = True
       break
     
-    # Because we're breaking the loop, we don't need an else statement.
-    # If the if statement fires off, the code will never get here,
-    # so we can save ourselves from nesting. Hopefully by this point you can tell that
-    # nesting == bad.
+  # Because we're breaking the loop, we don't need an else statement.
+  # If the if statement fires off, the code will never get here,
+  # so we can save ourselves from nesting. Hopefully by this point you can tell that
+  # nesting == bad.
+  if not user_found:
     print(f'{username} not found.\n')
+
