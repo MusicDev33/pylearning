@@ -1,0 +1,25 @@
+[2023-10-05 08:12:33] SUCCESS: Inserted 1 row into 'users' table (id=101, name="John Doe", email="john@example.com")
+[2023-10-05 08:13:45] ERROR: Deadlock detected - transaction rolled back (table='orders')
+[2023-10-05 08:14:22] SUCCESS: Inserted 3 rows into 'orders' table (customer_id=42, total=199.99)
+[2023-10-05 08:15:10] WARNING: Partial insert in 'inventory' table - 2 out of 5 rows succeeded
+[2023-10-05 08:16:01] ERROR: Connection timeout while inserting into 'transactions' table
+[2023-10-05 08:17:34] SUCCESS: Inserted 1 row into 'logs' table (event="login", user_id=101)
+[2023-10-05 08:18:56] ERROR: NULL value not allowed for 'price' in 'products' table
+[2023-10-05 08:19:07] SUCCESS: Bulk insert completed in 'products' table (50 new entries)
+[2023-10-05 08:20:42] WARNING: Slow query detected during insert into 'user_activity' table (execution_time=4.2s)
+[2023-10-05 08:21:15] ERROR: Deadlock detected - transaction rolled back (table='payments')
+[2023-10-05 08:22:00] SUCCESS: Inserted 1 row into 'customers' table (id=501, name="Alice Smith", tier="premium")
+[2023-10-05 08:23:29] ERROR: Connection timeout while inserting into 'transactions' table
+[2023-10-05 08:24:44] WARNING: Data truncated for column 'address' in 'shipping' table
+[2023-10-05 08:25:27] ERROR: NULL value not allowed for 'price' in 'products' table
+[2023-10-05 08:26:50] SUCCESS: Inserted 10 rows into 'reviews' table (product_id=205, avg_rating=4.5)
+[2023-10-05 08:28:03] ERROR: Deadlock detected - transaction rolled back (table='inventory')
+[2023-10-05 08:29:15] WARNING: Slow query detected during insert into 'user_activity' table (execution_time=3.8s)
+[2023-10-05 08:30:56] ERROR: Connection timeout while inserting into 'transactions' table
+[2023-10-05 08:32:10] SUCCESS: Inserted 5 rows into 'promotions' table (discount=15%, expiry="2023-12-31")
+[2023-10-05 08:33:22] WARNING: Partial insert in 'inventory' table - 3 out of 7 rows succeeded
+[2023-10-05 08:34:40] ERROR: NULL value not allowed for 'price' in 'products' table
+[2023-10-05 08:35:55] SUCCESS: Inserted 1 row into 'audit_log' table (action="delete", admin_id=7)
+[2023-10-05 08:37:01] ERROR: Deadlock detected - transaction rolled back (table='orders')
+[2023-10-05 08:38:20] WARNING: Data truncated for column 'address' in 'shipping' table
+[2023-10-05 08:39:45] SUCCESS: Inserted 100 rows into 'temp_data' table (batch_id=XYZ123)
