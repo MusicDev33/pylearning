@@ -1,0 +1,25 @@
+=== ERRORS ===
+Deadlock detected - transaction rolled back (table='orders')
+Connection timeout while inserting into 'transactions' table
+Deadlock detected - transaction rolled back (table='inventory')
+NULL value not allowed for 'price' in 'products' table
+Deadlock detected - transaction rolled back (table='payments')
+
+=== WARNINGS ===
+Partial insert in 'inventory' table - 3 out of 7 rows succeeded
+Slow query detected during insert into 'user_activity' table (execution_time=4.2s)
+Slow query detected during insert into 'user_activity' table (execution_time=3.8s)
+Partial insert in 'inventory' table - 2 out of 5 rows succeeded
+Data truncated for column 'address' in 'shipping' table
+
+=== SUCCESSES ===
+Inserted 3 rows into 'orders' table (customer_id=42, total=199.99)
+Inserted 1 row into 'users' table (id=101, name="John Doe", email="john@example.com")
+Inserted 10 rows into 'reviews' table (product_id=205, avg_rating=4.5)
+Inserted 1 row into 'customers' table (id=501, name="Alice Smith", tier="premium")
+Bulk insert completed in 'products' table (50 new entries)
+Inserted 1 row into 'audit_log' table (action="delete", admin_id=7)
+Inserted 1 row into 'logs' table (event="login", user_id=101)
+Inserted 5 rows into 'promotions' table (discount=15%, expiry="2023-12-31")
+Inserted 100 rows into 'temp_data' table (batch_id=XYZ123)
+
