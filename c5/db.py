@@ -60,3 +60,50 @@ def create_location(name: str):
   write_dict("_lindex.json", loc_index)
 
   return location_id
+
+# User Methods
+def get_user(username: str):
+  users = read_to_dict("_uindex.json")
+  if username in users:
+    user_id = users[username]
+
+    userdb = read_to_dict('_users.json')
+    user_data = userdb[user_id]
+    name, username, location_id = user_data['name'], user_data['username'], user_data['location']
+
+    locationdb = read_to_dict('_locations.json')
+    location = locationdb[location_id]['name']
+
+    print(name)
+    print(f'  Username: {username}')
+    print(f'  Location: {location}')
+  else:
+    print(f'User {username} not found.')
+
+def create_user(name: str, location: str):
+  name_data = name.split()
+  username = name_data[0][0].lower() + name_data[1].lower()
+
+  users = read_to_dict('_uindex.json')
+  if username in users:
+    print(f'Error: User with username {username} already exists. Failed to create new user.')
+    return None
+
+  locations = read_to_dict('_lindex.json')
+  if location in locations:
+    location_id = locations[location]
+  else:
+    create_location(location)
+    locations = read_to_dict('_lindex.json')
+    location_id = locations[location]
+
+  user_id = str(uuid.uuid4())
+  users[username] = user_id
+  write_dict('_uindex.json', users)
+
+  userdb = read_to_dict('_users.json')
+  user_data = {user_id:{'username': username, 'name': name, 'location': location_id, 'id': user_id}}
+  userdb.update(user_data)
+  write_dict('_users.json', userdb)
+  get_user(username)
+  print('User created successfully.')
