@@ -16,5 +16,11 @@
     "country": "Argentina",
     "name": "Buenos Aires, Argentina",
     "id": "bdb2de01-8a4a-4a25-82bc-9b894c8ac0a3"
+  },
+  "d036ee55-2726-43f0-a953-45aba1895d5d": {
+    "city": "Tokyo",
+    "country": "Japan",
+    "name": "Tokyo, Japan",
+    "id": "d036ee55-2726-43f0-a953-45aba1895d5d"
   }
 }

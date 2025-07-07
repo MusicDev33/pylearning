@@ -80,6 +80,28 @@ def get_user(username: str):
   else:
     print(f'User {username} not found.')
 
+# ALT FUNCTION
+def get_user_alt(username: str):
+  users = read_to_dict("_uindex.json")
+  if username not in users:
+    # Short-circuit early. This makes code easier to read because there's less nesting.
+    print(f"User {username} not found.")
+    return # Exit the function
+
+  # Now we're free to write whatever we want here because we've handled the user not existing
+  user_id = users[username]
+
+  userdb = read_to_dict('_users.json')
+  user_data = userdb[user_id]
+  name, username, location_id = user_data['name'], user_data['username'], user_data['location']
+
+  locationdb = read_to_dict('_locations.json')
+  location = locationdb[location_id]['name']
+
+  print(name)
+  print(f'  Username: {username}')
+  print(f'  Location: {location}')
+
 def create_user(name: str, location: str):
   name_data = name.split()
   username = name_data[0][0].lower() + name_data[1].lower()
@@ -103,6 +125,42 @@ def create_user(name: str, location: str):
 
   userdb = read_to_dict('_users.json')
   user_data = {user_id:{'username': username, 'name': name, 'location': location_id, 'id': user_id}}
+  userdb.update(user_data)
+  write_dict('_users.json', userdb)
+  get_user(username)
+  print('User created successfully.')
+
+# ALT FUNCTION
+def create_user_alt(name: str, location: str):
+  # Be explicit with how you want to split something
+  # By not specifying, your program will also split by tabs and newlines too
+  first_name, last_name = name.split(' ')
+
+  # save ourselves some brackets here
+  # Code is read more often than it is written, so always be thinking of readability, especially in Python
+  username = first_name[0].lower() + last_name.lower()
+
+  users = read_to_dict('_uindex.json')
+  if username in users:
+    print(f'Error: User with username {username} already exists. Failed to create new user.')
+    return # No need to specify None, as a normal return statement returns None by default
+  
+  locations = read_to_dict('_lindex.json')
+  if location in locations:
+    location_id = locations[location]
+  else:
+    create_location(location)
+    locations = read_to_dict('_lindex.json')
+    location_id = locations[location]
+
+  user_id = str(uuid.uuid4())
+  users[username] = user_id
+  write_dict('_uindex.json', users)
+
+  userdb = read_to_dict('_users.json')
+
+  # Put spaces after your colons, it makes things easier to read
+  user_data = {user_id: {'username': username, 'name': name, 'location': location_id, 'id': user_id}}
   userdb.update(user_data)
   write_dict('_users.json', userdb)
   get_user(username)
